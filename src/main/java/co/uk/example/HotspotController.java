@@ -11,8 +11,8 @@ public class HotspotController {
     
     @RequestMapping("/hotspot")
     public List<HotspotEntity> hotspot(
-            @RequestParam(value="town")String location,
-            @RequestParam(value="limit") int limit)
+            @RequestParam(value="town", defaultValue = "london")String location,
+            @RequestParam(value="limit", defaultValue = "5") int limit)
     {
 
         List results = new HotspotQuery().listHotspots(location, limit);
